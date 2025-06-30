@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:configure="team.iscode.igor.temperaturewidget.TempWidgetConfigureActivity"
+    android:configure="pt.iscode.temperaturewidget.TempWidgetConfigureActivity"
     android:description="@string/app_widget_description"
     android:initialKeyguardLayout="@layout/temp_widget"
     android:initialLayout="@layout/temp_widget"

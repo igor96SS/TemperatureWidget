@@ -1,4 +1,4 @@
-package team.iscode.igor.temperaturewidget
+package pt.iscode.temperaturewidget
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

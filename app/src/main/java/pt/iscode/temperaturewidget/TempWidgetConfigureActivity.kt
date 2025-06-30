@@ -1,4 +1,4 @@
-package team.iscode.igor.temperaturewidget
+package pt.iscode.temperaturewidget
 
 import android.app.Activity
 import android.appwidget.AppWidgetManager
@@ -7,7 +7,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import team.iscode.igor.temperaturewidget.databinding.TempWidgetConfigureBinding
+import pt.iscode.temperaturewidget.databinding.TempWidgetConfigureBinding
+import androidx.core.content.edit
 
 /**
  * The configuration screen for the [TempWidget] AppWidget.
@@ -67,14 +68,14 @@ class TempWidgetConfigureActivity : Activity() {
 
 }
 
-private const val PREFS_NAME = "team.iscode.igor.temperaturewidget.TempWidget"
+private const val PREFS_NAME = "team.iscode.temperaturewidget.TempWidget"
 private const val PREF_PREFIX_KEY = "appwidget_"
 
 // Write the prefix to the SharedPreferences object for this widget
 internal fun saveTitlePref(context: Context, appWidgetId: Int, text: String) {
-    val prefs = context.getSharedPreferences(PREFS_NAME, 0).edit()
-    prefs.putString(PREF_PREFIX_KEY + appWidgetId, text)
-    prefs.apply()
+    context.getSharedPreferences(PREFS_NAME, 0).edit {
+        putString(PREF_PREFIX_KEY + appWidgetId, text)
+    }
 }
 
 // Read the prefix from the SharedPreferences object for this widget.
@@ -86,7 +87,7 @@ internal fun loadTitlePref(context: Context, appWidgetId: Int): String {
 }
 
 internal fun deleteTitlePref(context: Context, appWidgetId: Int) {
-    val prefs = context.getSharedPreferences(PREFS_NAME, 0).edit()
-    prefs.remove(PREF_PREFIX_KEY + appWidgetId)
-    prefs.apply()
+    context.getSharedPreferences(PREFS_NAME, 0).edit {
+        remove(PREF_PREFIX_KEY + appWidgetId)
+    }
 }

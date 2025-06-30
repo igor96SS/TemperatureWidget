@@ -1,4 +1,4 @@
-package team.iscode.igor.temperaturewidget
+package pt.iscode.temperaturewidget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider

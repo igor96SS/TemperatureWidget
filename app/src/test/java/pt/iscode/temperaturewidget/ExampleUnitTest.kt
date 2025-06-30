@@ -1,4 +1,4 @@
-package team.iscode.igor.temperaturewidget
+package pt.iscode.temperaturewidget
 
 import org.junit.Test
 
